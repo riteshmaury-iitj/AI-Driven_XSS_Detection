@@ -2,7 +2,8 @@
 
 A hybrid **LSTM + Random Forest** model for detecting Cross-Site Scripting (XSS) attacks in real-time using deep learning feature extraction and ensemble classification.
 
-![Architecture]<img width="588" height="393" alt="image" src="https://github.com/user-attachments/assets/c005f0ca-c7d2-4e7d-a01c-6cb9ae42aa73" />
+![Architecture]
+<img width="588" height="393" alt="image" src="https://github.com/user-attachments/assets/c005f0ca-c7d2-4e7d-a01c-6cb9ae42aa73" />
 
 
 ## Project Structure
@@ -55,3 +56,6 @@ streamlit run app.py
 - Python, TensorFlow/Keras, Scikit-learn
 - LSTM, GRU, Random Forest, TF-IDF
 - Streamlit, Matplotlib, SHAP
+
+<img width="888" height="468" alt="image" src="https://github.com/user-attachments/assets/cfe959bf-428e-402f-91dc-ebf12f19a164" />
+
