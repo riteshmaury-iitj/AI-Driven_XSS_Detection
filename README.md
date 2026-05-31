@@ -2,7 +2,8 @@
 
 A hybrid **LSTM + Random Forest** model for detecting Cross-Site Scripting (XSS) attacks in real-time using deep learning feature extraction and ensemble classification.
 
-![Architecture](xss_architecture.png)
+![Architecture]<img width="588" height="393" alt="image" src="https://github.com/user-attachments/assets/c005f0ca-c7d2-4e7d-a01c-6cb9ae42aa73" />
+
 
 ## Project Structure
 
@@ -11,14 +12,7 @@ AI-Driven-XSS-Detection/
 ├── AI_Driven_XSS_Detection.ipynb   # Main training notebook
 ├── XSS_testing.ipynb               # Model testing & evaluation
 ├── app.py                          # Streamlit web application
-├── XSS_dataset.csv                 # Dataset (Sentence, Label)
-├── xss_lstm_model.h5               # Trained LSTM model
-├── xss_rf_model.pkl                # Trained Random Forest model
-├── xss_tfidf_vectorizer.pkl        # Fitted TF-IDF vectorizer
-├── xss_tokenizer.pkl               # Fitted Keras tokenizer
-├── xss_architecture.png            # Architecture diagram
 ├── requirements.txt                # Python dependencies
-└── .gitignore
 ```
 
 ## Architecture
