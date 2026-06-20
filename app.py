@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
+from huggingface_hub import hf_hub_download
 from tensorflow.keras.models import load_model, Sequential
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
@@ -11,17 +12,24 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 # CONFIGURATION
 # ==========================
 MAX_LENGTH = 100
+HF_REPO_ID = "Recurrent/xsss_models"
+
+
+def download_model(filename: str) -> str:
+    """Download a model file from HuggingFace Hub and return the local path."""
+    return hf_hub_download(repo_id=HF_REPO_ID, filename=filename)
+
 
 # ==========================
 # LOAD MODELS
 # ==========================
 @st.cache_resource
 def load_artifacts():
-    rf_model = joblib.load("xss_rf_model.pkl")
-    tfidf = joblib.load("xss_tfidf_vectorizer.pkl")
-    tokenizer = joblib.load("xss_tokenizer.pkl")
+    rf_model = joblib.load(download_model("xss_rf_model.pkl"))
+    tfidf = joblib.load(download_model("xss_tfidf_vectorizer.pkl"))
+    tokenizer = joblib.load(download_model("xss_tokenizer.pkl"))
 
-    lstm_model = load_model("xss_lstm_model.h5")
+    lstm_model = load_model(download_model("xss_lstm_model.h5"))
 
     # Remove output layer to extract features
     feature_extractor = Sequential(lstm_model.layers[:-1])
