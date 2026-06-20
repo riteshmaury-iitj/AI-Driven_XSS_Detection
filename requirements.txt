@@ -8,3 +8,6 @@ wordcloud
 shap
 joblib
 streamlit
+fastapi
+uvicorn[standard]
+pydantic
