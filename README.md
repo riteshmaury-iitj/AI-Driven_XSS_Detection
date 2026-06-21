@@ -60,13 +60,6 @@ The additional dataset improves model performance by providing more diverse XSS 
 | GRU                  | 99.95%   |
 | Naive Bayes          | 88.50%   |
 
-**Random Forest Classification Report:**
-| Metric | Safe (0) | XSS (1) | Weighted Avg |
-|--------|----------|----------|--------------|
-| Precision | 1.00 | 1.00 | 1.00 |
-| Recall | 1.00 | 1.00 | 1.00 |
-| F1-Score | 1.00 | 1.00 | 1.00 |
-
 **K-Fold Cross Validation (10-fold):** 99.94%
 
 ## Setup & Run
