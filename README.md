@@ -105,3 +105,6 @@ The app is configured for deployment on Render:
 - LSTM, GRU, Random Forest, TF-IDF
 - FastAPI, Streamlit, Plotly, SHAP
 - HuggingFace Hub, Render
+<img width="2109" height="2709" alt="architecture" src="https://github.com/user-attachments/assets/443f8aa0-1d40-4275-8377-01cabbf73b4c" />
+
+
