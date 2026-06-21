@@ -62,6 +62,10 @@ The additional dataset improves model performance by providing more diverse XSS 
 
 **K-Fold Cross Validation (10-fold):** 99.94%
 
+**Architecture:**
+<img width="600" height="800" alt="architecture_updated" src="https://github.com/user-attachments/assets/36a6f267-2759-4a09-9b28-2b3f721531db" />
+
+
 ## Setup & Run
 
 ```bash
@@ -105,6 +109,4 @@ The app is configured for deployment on Render:
 - LSTM, GRU, Random Forest, TF-IDF
 - FastAPI, Streamlit, Plotly, SHAP
 - HuggingFace Hub, Render
-<img width="2109" height="2709" alt="architecture" src="https://github.com/user-attachments/assets/443f8aa0-1d40-4275-8377-01cabbf73b4c" />
-
 
