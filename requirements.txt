@@ -1,13 +1,8 @@
-tensorflow
+tensorflow==2.19.0
 scikit-learn
 numpy
-pandas
-matplotlib
-seaborn
-wordcloud
-shap
 joblib
-streamlit
+huggingface_hub
 fastapi
 uvicorn[standard]
 pydantic

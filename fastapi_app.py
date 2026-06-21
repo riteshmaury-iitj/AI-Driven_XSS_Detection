@@ -5,6 +5,7 @@ import joblib
 import numpy as np
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from huggingface_hub import hf_hub_download
 from pydantic import BaseModel, Field
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, LSTM, Embedding
