@@ -63,7 +63,9 @@ The additional dataset improves model performance by providing more diverse XSS 
 **K-Fold Cross Validation (10-fold):** 99.94%
 
 **Architecture:**
-<img width="600" height="800" alt="architecture_updated" src="https://github.com/user-attachments/assets/36a6f267-2759-4a09-9b28-2b3f721531db" />
+
+
+<img width="300" height="420" alt="architecture_updated" src="https://github.com/user-attachments/assets/36a6f267-2759-4a09-9b28-2b3f721531db" />
 
 
 ## Setup & Run
