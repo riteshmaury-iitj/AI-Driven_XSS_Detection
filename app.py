@@ -15,12 +15,6 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 MAX_LENGTH = 100
 HF_REPO_ID = "Recurrent/xsss_models"
 
-# Proxy configuration for corporate network
-os.environ.setdefault("HTTP_PROXY", "http://sysproxy.wal-mart.com:8080")
-os.environ.setdefault("HTTPS_PROXY", "http://sysproxy.wal-mart.com:8080")
-os.environ.setdefault("NO_PROXY", ".walmart.com,.wal-mart.com,.walmart.net,.google.internal,127.0.0.1,localhost")
-
-
 def download_model(filename: str) -> str:
     """Download a model file from HuggingFace Hub, fallback to local."""
     # Try local file first
