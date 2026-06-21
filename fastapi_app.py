@@ -1,4 +1,5 @@
 from contextlib import asynccontextmanager
+import os
 
 import joblib
 import numpy as np
@@ -6,7 +7,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from huggingface_hub import hf_hub_download
 from pydantic import BaseModel, Field
-from tensorflow.keras.models import load_model, Sequential
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, LSTM, Embedding
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # ==========================
@@ -22,7 +24,11 @@ models = {}
 
 
 def download_model(filename: str) -> str:
-    """Download a model file from HuggingFace Hub and return the local path."""
+    """Download a model file from HuggingFace Hub, fallback to local."""
+    if os.path.exists(filename):
+        return filename
+
+    from huggingface_hub import hf_hub_download
     return hf_hub_download(repo_id=HF_REPO_ID, filename=filename)
 
 
@@ -32,7 +38,15 @@ async def lifespan(app: FastAPI):
     rf_model = joblib.load(download_model("xss_rf_model.pkl"))
     tfidf = joblib.load(download_model("xss_tfidf_vectorizer.pkl"))
     tokenizer = joblib.load(download_model("xss_tokenizer.pkl"))
-    lstm_model = load_model(download_model("xss_lstm_model.h5"))
+
+    # Rebuild LSTM architecture and load weights (avoids Keras version mismatch)
+    lstm_model = Sequential([
+        Embedding(input_dim=5000, output_dim=128),
+        LSTM(64),
+        Dense(1, activation='sigmoid')
+    ])
+    lstm_model.build(input_shape=(None, MAX_LENGTH))
+    lstm_model.load_weights(download_model("xss_lstm_model.h5"))
 
     # Remove output layer to extract features
     feature_extractor = Sequential(lstm_model.layers[:-1])
