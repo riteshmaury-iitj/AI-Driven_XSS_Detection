@@ -53,14 +53,21 @@ The additional dataset improves model performance by providing more diverse XSS 
 
 | Model               | Accuracy |
 |----------------------|----------|
-| **Random Forest**    | **99.74%** |
-| Logistic Regression  | 99.74%   |
-| Decision Tree        | 99.74%   |
-| LSTM                 | 99.77%   |
-| GRU                  | 99.95%   |
-| Naive Bayes          | 88.50%   |
+| **Random Forest**    | **99.92%** |
+| Logistic Regression  | 99.90%   |
+| Decision Tree        | 99.90%   |
+| LSTM                 | 99.90%   |
+| GRU                  | 99.87%   |
+| Naive Bayes          | 92.22%   |
 
-**K-Fold Cross Validation (10-fold):** 99.94%
+**Random Forest Classification Report:**
+| Metric | Safe (0) | XSS (1) | Weighted Avg |
+|--------|----------|----------|--------------|
+| Precision | 1.00 | 1.00 | 1.00 |
+| Recall | 1.00 | 1.00 | 1.00 |
+| F1-Score | 1.00 | 1.00 | 1.00 |
+
+**K-Fold Cross Validation (10-fold):** 99.85%
 
 ## Architecture:
 
